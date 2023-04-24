@@ -1,14 +1,13 @@
 import { useTranslation } from "@/app/i18n";
-import { Navbar } from "@/components/Navbar";
+import GPage from "@/components/GPage";
 import { PageProps } from "@/types/GenericalPageProps";
 
 export default async function Login({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <Navbar t={t} />
+    <GPage t={t}>
       <div></div>
-    </main>
+    </GPage>
   );
 }
