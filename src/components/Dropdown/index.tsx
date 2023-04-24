@@ -1,5 +1,6 @@
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import React, { useState } from "react";
+import Anchor from "../Anchor";
 
 export type DropdownOption = {
   value: string;
@@ -62,8 +63,8 @@ export default function DropdownComponent({
           {options.map((option) => {
             return (
               <li key={option.value}>
-                <a
-                  href="#"
+                <Anchor
+                  onlyCursor
                   onClick={() => {
                     onSelect(option);
                     setOpened(false);
@@ -71,7 +72,7 @@ export default function DropdownComponent({
                   className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-emerald-600 dark:hover:text-white"
                 >
                   {option.label}
-                </a>
+                </Anchor>
               </li>
             );
           })}
