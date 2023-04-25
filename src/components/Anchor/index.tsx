@@ -25,7 +25,7 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
 
   if (onlyCursor) {
     return (
-      <div onClick={onClick} className={`cursor-pointer ${className}`}>
+      <div onClick={onClick} className={`cursor-pointer hover:text-lime-500 ${className}`}>
         {children}
       </div>
     );
@@ -33,7 +33,7 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
 
   if (isExternal) {
     return (
-      <a href={href} onClick={onClick} target={"_blank"} className={className}>
+      <a href={href} onClick={onClick} target={"_blank"} className={`hover:text-lime-500 ${className}`}>
         {children}
       </a>
     );
@@ -43,7 +43,7 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
     <Link
       href={`/${params.lng}${href}`}
       onClick={onClick}
-      className={className}
+      className={`hover:text-lime-500 ${className}`}
     >
       {children}
     </Link>

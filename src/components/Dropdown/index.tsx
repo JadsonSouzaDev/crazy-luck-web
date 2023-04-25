@@ -1,6 +1,7 @@
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import React, { useState } from "react";
 import Anchor from "../Anchor";
+import { Text } from "@/components/Text";
 
 export type DropdownOption = {
   value: string;
@@ -28,11 +29,11 @@ export default function DropdownComponent({
         ref={ref}
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
-        className="text-sm  focus:outline-none rounded-lg px-4 py-2.5 text-center inline-flex items-center"
+        className="text-sm focus:outline-none rounded-lg px-4 py-2.5 text-center inline-flex items-center text-black-500 hover:text-lime-500"
         type="button"
         onClick={() => setOpened(!opened)}
       >
-        {selectedValue.label || options[0].label || ""}{" "}
+        <Text>{selectedValue.label || options[0].label || ""} </Text>
         <svg
           className={`w-4 h-4 ml-2 ${opened ? "rotate-180" : ""}`}
           aria-hidden="true"
@@ -54,10 +55,10 @@ export default function DropdownComponent({
         id="dropdown"
         className={`absolute z-10 ${
           !opened ? "hidden" : ""
-        } bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-emerald-700`}
+        } bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-lime-700`}
       >
         <ul
-          className="py-2 text-sm text-gray-700 dark:text-emerald-200"
+          className="py-2 text-sm text-gray-700 dark:text-lime-200"
           aria-labelledby="dropdownDefaultButton"
         >
           {options.map((option) => {
@@ -69,7 +70,7 @@ export default function DropdownComponent({
                     onSelect(option);
                     setOpened(false);
                   }}
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-emerald-600 dark:hover:text-white"
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-lime-600 dark:hover:text-white"
                 >
                   {option.label}
                 </Anchor>

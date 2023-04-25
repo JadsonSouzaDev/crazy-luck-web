@@ -6,7 +6,7 @@ export default async function Help({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
 
   return (
-    <GPage t={t}>
+    <GPage id="help" t={t}>
       <div></div>
     </GPage>
   );
