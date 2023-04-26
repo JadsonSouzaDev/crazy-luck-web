@@ -20,11 +20,11 @@ const noto = Bungee({
 
 export const Navbar = ({ t }: NavbarProps) => {
   return (
-    <nav className="flex flex-col min-w-full p-4 md:p-8">
+    <nav className="flex flex-col min-w-full px-2 py-4 md:p-8">
       <div className="flex justify-center md:hidden">
         <Anchor href="">
           <h1
-            className={`${noto.className} text-lime-500 text-3xl font-extrabold md:text-4xl lg:text-5xl`}
+            className={`${noto.className} text-lime-500 text-4xl font-extrabold lg:text-5xl`}
           >
             {t("app-name")}
           </h1>
@@ -63,9 +63,7 @@ export const Navbar = ({ t }: NavbarProps) => {
             </Anchor>
           </div>
           <Anchor href="/login">
-            <Text fontSize="sm">
-              {t("login-navbar-button")}
-            </Text>
+            <Text fontSize="sm">{t("login-navbar-button")}</Text>
           </Anchor>
         </div>
       </div>
