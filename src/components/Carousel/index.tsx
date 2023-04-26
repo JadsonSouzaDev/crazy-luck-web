@@ -9,7 +9,7 @@ type CarouseProps = {
 
 const Carousel = ({ items }: CarouseProps) => {
   const [index, setIndex] = useState(0);
-  const [delay, setDelay] = useState(8000);
+  const [delay, setDelay] = useState(6000);
 
   useTimeout(() => {
     setIndex((oldIndex) => {
@@ -42,7 +42,7 @@ const Carousel = ({ items }: CarouseProps) => {
             <div
               key={key}
               onClick={() => setIndex(key)}
-              className="animate-pulse h-4 md:h-4 w-4 md:w-4 rounded-full bg-white cursor-pointer"
+              className="animate-pulse h-4 md:h-4 w-4 md:w-4 rounded-full bg-white opacity-80 cursor-pointer"
             ></div>
           );
         })}
