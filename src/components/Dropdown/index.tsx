@@ -1,7 +1,7 @@
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import React, { useState } from "react";
 import Anchor from "../Anchor";
-import { Text } from "@/components/Text";
+import Text from "@/components/Text";
 
 export type DropdownOption = {
   value: string;

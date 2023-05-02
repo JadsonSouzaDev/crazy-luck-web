@@ -36,13 +36,15 @@ const Carousel = ({ items }: CarouseProps) => {
         );
       })}
 
-      <div className="flex justify-between w-1/2 md:w-1/4 h-3 md:h-5 -translate-y-10">
+      <div className="flex justify-between items-center w-1/2 md:w-1/4 h-3 md:h-5 -translate-y-10">
         {Array.from(Array(items.length).keys()).map((key) => {
           return (
             <div
               key={key}
               onClick={() => setIndex(key)}
-              className="animate-pulse h-4 md:h-4 w-4 md:w-4 rounded-full bg-white opacity-80 cursor-pointer"
+              className={`rounded-full bg-white cursor-pointer h-4 md:h-4 w-4 md:w-4 ${
+                key === index ? "h-5 md:h-5 w-5 md:w-5" : "opacity-60"
+              }`}
             ></div>
           );
         })}

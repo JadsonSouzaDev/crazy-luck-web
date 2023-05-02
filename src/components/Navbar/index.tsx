@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { TFunction } from "i18next";
 import { Bungee } from "next/font/google";
-import { Text } from "@/components/Text";
+import Text from "@/components/Text";
 import { LanguageDropdown } from "./LanguageDropdown";
 import Anchor from "../Anchor";
 
@@ -20,7 +20,7 @@ const noto = Bungee({
 
 export const Navbar = ({ t }: NavbarProps) => {
   return (
-    <nav className="flex flex-col min-w-full px-2 py-4 md:p-8">
+    <nav className="flex flex-col min-w-full px-3 py-4 md:p-8">
       <div className="flex justify-center md:hidden">
         <Anchor href="">
           <h1

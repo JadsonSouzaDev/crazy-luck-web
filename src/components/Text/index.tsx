@@ -1,3 +1,4 @@
+import colors from "@/constants/colors";
 import variants from "@/constants/variants";
 import { ReactNode } from "react";
 
@@ -17,7 +18,7 @@ type TextProps = {
   variant?: variants;
 };
 
-export const Text = (props: TextProps) => {
+const Text = (props: TextProps) => {
   const sizes = {
     "2xl": "text-xl md:text-2xl lg:text-3xl",
     xl: "text-lg md:text-xl lg:text-2xl",
@@ -36,9 +37,11 @@ export const Text = (props: TextProps) => {
     variant = "black",
   } = props;
 
-  const customizedClass = `${sizes[fontSize]} font-${fontWeight} ${className} text-${variant}`;
+  const customizedClass = `${sizes[fontSize]} font-${fontWeight} ${className} text-${colors[variant]}`;
   if (isParagraph) {
     return <p className={customizedClass}>{children}</p>;
   }
   return <span className={customizedClass}>{children}</span>;
 };
+
+export default Text;

@@ -1,6 +1,6 @@
 import { TFunction } from "i18next";
 import { Award } from "@/types/Award";
-import { Text } from "@/components/Text";
+import Text from "@/components/Text";
 import Heading from "../../Heading";
 import Button from "@/components/Button";
 import { randomIntFromInterval } from "@/utils/random";
