@@ -51,7 +51,7 @@ export default async function Login({ params: { lng } }: PageProps) {
 
   return (
     <GPage id="offers" t={t}>
-      <GSection id="carousel" className="mb-6 md:mb-14">
+      <GSection id="carousel" className="mb-6 md:mb-14 xl:px-0">
         <AwardCarousel t={t} awards={awards} />
       </GSection>
       <GSection id="campaing-ending" className="bg-gray-100">

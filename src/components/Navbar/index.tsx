@@ -20,7 +20,7 @@ const noto = Bungee({
 
 export const Navbar = ({ t }: NavbarProps) => {
   return (
-    <nav className="flex flex-col min-w-full px-3 py-4 md:p-8">
+    <nav className="flex flex-col min-w-full px-3 py-4 md:p-8 justify-center item-center">
       <div className="flex justify-center md:hidden">
         <Anchor href="">
           <h1

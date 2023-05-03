@@ -15,9 +15,9 @@ type SoonAwardCardsProps = {
 const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
   return (
     <div className="flex flex-col items-center md:flex-row pt-6 justify-center gap-5">
-      {awards.map((award) => {
+      {awards.map((award, key) => {
         return (
-          <Card>
+          <Card key={key}>
             <Card.Header>
               <div className="flex md:basis-2/4 justify-center py-4 p-2 md:p-4 bg-gradient-to-r from-lime-500 to-lime-300 rounded">
                 <div className="absolute -ml-60 -mt-6">
