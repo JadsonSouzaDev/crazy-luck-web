@@ -6,7 +6,9 @@ class AwardSoldNumbers {
 export class Award {
   title: string = "";
   description: string = "";
+  shortDescription: string = "";
   urlImage: string = "";
   price: number = 999;
   soldNumbers: AwardSoldNumbers = new AwardSoldNumbers();
+  maxDrawDate: Date = new Date();
 }

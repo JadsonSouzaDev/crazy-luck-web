@@ -17,10 +17,10 @@ const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
     <div className="flex flex-col items-center md:flex-row pt-6 justify-center gap-5">
       {awards.map((award, key) => {
         return (
-          <Card key={key}>
+          <Card key={key} className="max-w-xs">
             <Card.Header>
               <div className="flex md:basis-2/4 justify-center py-4 p-2 md:p-4 bg-gradient-to-r from-lime-500 to-lime-300 rounded">
-                <div className="absolute -ml-60 -mt-6">
+                <div className="absolute -ml-60 -mt-7">
                   <div className="flex flex-col bg-gradient-to-r from-yellow-300 to-yellow-500 w-16 h-16 rounded-full justify-center items-center">
                     <Text>{t("left")}</Text>
                     <Text fontSize="lg" fontWeight="bold" className="-mt-1">
@@ -29,7 +29,7 @@ const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
                   </div>
                 </div>
 
-                <div className="flex max-h-32 justify-center">
+                <div className="flex max-h-40 justify-center">
                   <img
                     style={{ maxHeight: "100%" }}
                     src={award.urlImage}
@@ -49,7 +49,7 @@ const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
               </Heading>
               <div className="flex justify-center items-end gap-1">
                 <Text className="mb-1 -mr-2 text-gray-400">R$</Text>
-                <Text variant="primary" fontSize="xl" fontWeight="bold">
+                <Text variant="primary" fontSize="2xl" fontWeight="bold">
                   {formatCurrency(award.price)}
                 </Text>
               </div>

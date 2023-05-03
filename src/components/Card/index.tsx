@@ -2,9 +2,10 @@ import React from "react";
 
 type CardProps = {
   children: JSX.Element[] | JSX.Element;
+  className?: string;
 };
 
-const Card = ({ children }: CardProps) => {
+const Card = ({ children, className }: CardProps) => {
   const subComponentList = Object.keys(Card);
   const subComponents = subComponentList.map((key) => {
     return React.Children.map(children, (child) =>
@@ -13,7 +14,7 @@ const Card = ({ children }: CardProps) => {
   });
 
   return (
-    <div className="flex flex-col max-w-xs rounded overflow-hidden shadow-lg p-4 bg-white gap-4">
+    <div className={`flex flex-col rounded overflow-hidden shadow-lg p-4 bg-white gap-4 ${className}`}>
       {subComponents.map((component) => component)}
     </div>
   );
