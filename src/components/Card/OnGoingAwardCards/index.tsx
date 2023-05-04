@@ -1,5 +1,4 @@
-import { Award } from "@/types/Award";
-import { TFunction } from "i18next";
+import { Award } from "@/types/model/Award";
 import Card from "..";
 import Heading from "@/components/Heading";
 import Text from "@/components/Text";
@@ -11,11 +10,11 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
 import { formatDate } from "@/utils/date";
+import { TranslateProps } from "@/types/props/TranslateProps";
 
 type OnGoingAwardCardsProps = {
   awards: Award[];
-  t: TFunction;
-};
+} & TranslateProps;
 
 const OnGoingAwardCards = ({ awards, t }: OnGoingAwardCardsProps) => {
   return (
@@ -25,7 +24,7 @@ const OnGoingAwardCards = ({ awards, t }: OnGoingAwardCardsProps) => {
           <Card key={key} className="w-80 md:w-auto md:gap-1">
             <Card.Body>
               <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-3 md:gap-10">
-                <div className="flex max-h-48 justify-center">
+                <div className="flex max-h-40 justify-center">
                   <img
                     className="my-auto"
                     style={{ maxHeight: "100%" }}
@@ -83,7 +82,7 @@ const OnGoingAwardCards = ({ awards, t }: OnGoingAwardCardsProps) => {
           </Card>
         );
       })}
-      <div className="flex justify-center pt-4">
+      <div className="flex justify-center py-4">
         <Button inverted className="md:px-6">
           {t("see-more")}
         </Button>

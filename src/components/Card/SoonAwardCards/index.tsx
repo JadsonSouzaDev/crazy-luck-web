@@ -1,20 +1,19 @@
-import { Award } from "@/types/Award";
+import { Award } from "@/types/model/Award";
 import Text from "@/components/Text";
 import Card from "..";
 import Heading from "@/components/Heading";
-import { TFunction } from "i18next";
 import Button from "@/components/Button";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { formatCurrency } from "@/utils/currency";
+import { TranslateProps } from "@/types/props/TranslateProps";
 
 type SoonAwardCardsProps = {
   awards: Award[];
-  t: TFunction;
-};
+} & TranslateProps;
 
 const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
   return (
-    <div className="flex flex-col items-center md:flex-row pt-6 justify-center gap-5">
+    <div className="flex flex-col items-center md:flex-row pt-6 justify-center gap-5 pb-10">
       {awards.map((award, key) => {
         return (
           <Card key={key} className="max-w-xs">

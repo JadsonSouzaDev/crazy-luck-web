@@ -3,15 +3,13 @@ import {
   HeartIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
-import { TFunction } from "i18next";
 import { Bungee } from "next/font/google";
 import Text from "@/components/Text";
 import { LanguageDropdown } from "./LanguageDropdown";
 import Anchor from "../Anchor";
+import { TranslateProps } from "@/types/props/TranslateProps";
 
-type NavbarProps = {
-  t: TFunction;
-};
+type NavbarProps = TranslateProps;
 
 const noto = Bungee({
   subsets: ["latin"],

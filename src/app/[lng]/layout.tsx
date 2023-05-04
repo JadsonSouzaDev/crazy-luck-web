@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 
 export const metadata = {
   title: "Galego da Sorte - Nunca foi tão fácil ganhar",
-  description: "O melhor site de rifas do cariri paraibano",
+  description: "O melhor site de sorteios do cariri paraibano",
 };
 
 export default function RootLayout({

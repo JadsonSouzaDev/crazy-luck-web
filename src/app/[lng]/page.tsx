@@ -1,12 +1,15 @@
 import { useTranslation } from "@/app/i18n";
 import OnGoingAwardCards from "@/components/Card/OnGoingAwardCards";
 import SoonAwardCards from "@/components/Card/SoonAwardCards";
+import WinnersCards from "@/components/Card/WinnersCards";
 import AwardCarousel from "@/components/Carousel/Award/AwardCarousel";
 import GPage from "@/components/GPage";
 import GSection from "@/components/GSection";
 import Heading from "@/components/Heading";
-import { Award } from "@/types/Award";
-import { PageProps } from "@/types/GenericalPageProps";
+import { Award } from "@/types/model/Award";
+import { PageProps } from "@/types/props/GenericalPageProps";
+import { Winner } from "@/types/model/Winner";
+import DonationCard from "@/components/Card/DonationCard";
 
 export default async function Login({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
@@ -24,6 +27,7 @@ export default async function Login({ params: { lng } }: PageProps) {
         total: 1000,
       },
       maxDrawDate: new Date(),
+      drawDate: new Date(),
     },
 
     {
@@ -39,6 +43,7 @@ export default async function Login({ params: { lng } }: PageProps) {
         total: 1000,
       },
       maxDrawDate: new Date(),
+      drawDate: new Date(),
     },
 
     {
@@ -54,6 +59,46 @@ export default async function Login({ params: { lng } }: PageProps) {
         total: 1000,
       },
       maxDrawDate: new Date(),
+      drawDate: new Date(),
+    },
+  ];
+
+  const winners: Winner[] = [
+    {
+      award: awards[0],
+      winner: {
+        name: "Aristides Mendes",
+      },
+      ticket: {
+        slug: "035154",
+      },
+    },
+    {
+      award: awards[1],
+      winner: {
+        name: "Adalgamir Silva",
+      },
+      ticket: {
+        slug: "065345",
+      },
+    },
+    {
+      award: awards[2],
+      winner: {
+        name: "Jose Matheus",
+      },
+      ticket: {
+        slug: "090910",
+      },
+    },
+    {
+      award: awards[2],
+      winner: {
+        name: "Jose Matheus",
+      },
+      ticket: {
+        slug: "090910",
+      },
     },
   ];
 
@@ -64,18 +109,14 @@ export default async function Login({ params: { lng } }: PageProps) {
       </GSection>
 
       <GSection id="campaing-ending" className="bg-gray-100 mb-14">
-        <Heading
-          as="h2"
-          className="pt-5 font-normal md:text-left"
-          align="center"
-        >
+        <Heading as="h2" className="pt-5 md:text-left" align="center">
           {t("campaing-ending-soon")}
         </Heading>
         <SoonAwardCards awards={awards} t={t} />
       </GSection>
 
       <GSection id="on-going-campaign" className="bg-gray-100 mb-14">
-        <Heading as="h2" className="pt-5 font-normal" align="center">
+        <Heading as="h2" className="pt-5" align="center">
           {t("on-going-deals")}
         </Heading>
         <OnGoingAwardCards awards={awards} t={t} />
@@ -83,11 +124,20 @@ export default async function Login({ params: { lng } }: PageProps) {
 
       <GSection
         id="winners"
-        className="bg-gradient-to-r from-lime-600 to-lime-400"
+        className="bg-gradient-to-r from-lime-500 to-lime-600 mb-14"
       >
-        <Heading as="h2" variant="white" className="pt-5 font-normal" align="center">
+        <Heading as="h2" variant="white" className="pt-5" align="center">
           {t("recent-winners")}
         </Heading>
+
+        <WinnersCards winners={winners} t={t} />
+      </GSection>
+
+      <GSection id="donation" className="bg-gray-100 lg:mb-14">
+        <Heading as="h2" className="pt-5" align="center">
+          {t("donation-title")}
+        </Heading>
+        <DonationCard t={t} />
       </GSection>
     </GPage>
   );

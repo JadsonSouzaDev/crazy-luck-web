@@ -14,7 +14,7 @@ const Card = ({ children, className }: CardProps) => {
   });
 
   return (
-    <div className={`flex flex-col rounded overflow-hidden shadow-lg p-4 bg-white gap-4 ${className}`}>
+    <div className={`flex flex-col rounded-xl overflow-hidden shadow-lg p-4 bg-white gap-4 ${className}`}>
       {subComponents.map((component) => component)}
     </div>
   );

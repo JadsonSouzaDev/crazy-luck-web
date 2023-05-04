@@ -11,4 +11,5 @@ export class Award {
   price: number = 999;
   soldNumbers: AwardSoldNumbers = new AwardSoldNumbers();
   maxDrawDate: Date = new Date();
+  drawDate: Date = new Date();
 }
