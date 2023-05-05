@@ -26,5 +26,8 @@
   "download-on": "Download on",
   "about-us": "About us",
   "contact-us": "Contact us",
-  "privacy-policy": "Privacy Policy"
+  "privacy-policy": "Privacy Policy",
+  "logout": "Logout",
+  "signin-title": "Sign in to unlock the best of {{app}}",
+  "signin-social": "Continue with {{provider}}"
 }

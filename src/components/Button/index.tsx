@@ -1,3 +1,5 @@
+"use client"
+
 import { ReactNode } from "react";
 import Text from "@/components/Text";
 
@@ -20,6 +22,7 @@ const Button = ({
   noPadding,
   size = "base",
   className,
+  onClick
 }: ButtonProps) => {
   const commonClass = "rounded";
   const paddingClass = { base: "py-2 px-4", lg: "py-3 px-6", xl: "py-4 px-8" };
@@ -43,7 +46,7 @@ const Button = ({
   } ${disabled ? types["disabled"] : ""} ${className}`;
 
   return (
-    <button className={customizedClass}>
+    <button onClick={onClick} className={customizedClass}>
       <Text fontSize={size}>{children}</Text>
     </button>
   );

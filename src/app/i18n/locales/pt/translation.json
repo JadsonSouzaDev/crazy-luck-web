@@ -26,5 +26,8 @@
   "download-on": "Baixe na",
   "about-us": "Sobre nós",
   "contact-us": "Contate-nos",
-  "privacy-policy": "Políticas de privacidade"
+  "privacy-policy": "Políticas de privacidade",
+  "logout": "Sair",
+  "signin-title": "Entre para liberar o melhor do {{app}}",
+  "signin-social": "Entre com o {{provider}}"
 }

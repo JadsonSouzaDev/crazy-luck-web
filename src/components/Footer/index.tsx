@@ -35,7 +35,7 @@ const Footer = ({ t }: FooterProps) => {
             </div>
           </div>
         </div>
-        <div className="mt-28 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
+        <div className="mt-28 md:mt-8 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
           <p className="order-2 md:order-1 mt-8 md:mt-0">
             &copy; Boodega Soluções Digitais, {new Date().getFullYear()}
           </p>

@@ -2,6 +2,7 @@ import "../globals.css";
 
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
+import Provider from "@/components/Provider";
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -27,7 +28,9 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

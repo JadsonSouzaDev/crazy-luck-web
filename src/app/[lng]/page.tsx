@@ -12,7 +12,7 @@ import { Winner } from "@/types/model/Winner";
 import DonationCard from "@/components/Card/DonationCard";
 
 export default async function Login({ params: { lng } }: PageProps) {
-  const { t, i18n } = await useTranslation(lng, 'translation');
+  const { t, i18n } = await useTranslation(lng, "translation");
 
   const awards: Award[] = [
     {
