@@ -1,4 +1,5 @@
 import { TranslateProps } from "@/types/props/TranslateProps";
+import Image from "next/image";
 
 type FooterProps = TranslateProps;
 
@@ -11,20 +12,22 @@ const Footer = ({ t }: FooterProps) => {
           <p>{t("slogan")}</p>
           <div className="flex justify-center my-10">
             <div className="flex items-center border rounded-lg px-4 py-2 w-44 mx-2">
-              <img
+              <Image
+              width={100}
+              height={100}
                 src="https://cdn-icons-png.flaticon.com/512/888/888857.png"
-                className="w-7 md:w-8"
-              />
+                className="w-7 md:w-8" alt={"google"}              />
               <div className="text-left ml-3">
                 <p className="text-xs text-gray-200">{t("download-on")}</p>
                 <p className="text-sm md:text-base">Google Play</p>
               </div>
             </div>
             <div className="flex items-center border  rounded-lg px-4 py-2 w-44 mx-2">
-              <img
+              <Image
+              width={100}
+              height={100}
                 src="https://cdn-icons-png.flaticon.com/512/888/888841.png"
-                className="w-7 md:w-8"
-              />
+                className="w-7 md:w-8" alt={"apple"}              />
               <div className="text-left ml-3">
                 <p className="text-xs text-gray-200">{t("download-on")}</p>
                 <p className="text-sm md:text-base">Apple Store</p>

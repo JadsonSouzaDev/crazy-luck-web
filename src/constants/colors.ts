@@ -1,4 +1,4 @@
-export default {
+const colors = {
   primary: "lime-500",
   white: "white",
   gray: "gray-600",
@@ -7,3 +7,5 @@ export default {
   attention: "yellow-400",
   required: "red-500",
 };
+
+export default colors;

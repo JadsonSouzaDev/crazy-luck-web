@@ -1,9 +1,9 @@
-import React from "react";
+import { useEffect, useRef } from "react";
 
 export const useOutsideClick = (callback: { (): void; (): void; }) => {
-  const ref = React.useRef<any>();
+  const ref = useRef<any>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClick = (event: { target: any; }) => {
       if (ref.current && !ref.current.contains(event.target)) {
         callback();
@@ -15,6 +15,7 @@ export const useOutsideClick = (callback: { (): void; (): void; }) => {
     return () => {
       document.removeEventListener("click", handleClick);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 
   return ref;

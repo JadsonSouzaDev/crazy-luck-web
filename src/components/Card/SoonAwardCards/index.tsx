@@ -6,6 +6,8 @@ import Button from "@/components/Button";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { formatCurrency } from "@/utils/currency";
 import { TranslateProps } from "@/types/props/TranslateProps";
+import Image from "next/image";
+import GImage from "@/components/GImage";
 
 type SoonAwardCardsProps = {
   awards: Award[];
@@ -28,9 +30,10 @@ const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
                   </div>
                 </div>
 
-                <div className="flex max-h-40 justify-center">
-                  <img
-                    style={{ maxHeight: "100%" }}
+                <div className="flex max-h-40 px-12 justify-center">
+                  <GImage
+                    wClass="w-40"
+                    hClass="h-40"
                     src={award.urlImage}
                     alt={award.title}
                   />

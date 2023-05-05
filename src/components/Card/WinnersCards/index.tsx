@@ -4,6 +4,7 @@ import Text from "@/components/Text";
 import Heading from "@/components/Heading";
 import { formatDate } from "@/utils/date";
 import { TranslateProps } from "@/types/props/TranslateProps";
+import GImage from "@/components/GImage";
 
 type WinnersCardsProps = {
   winners: Winner[];
@@ -18,8 +19,9 @@ const WinnersCards = ({ winners, t }: WinnersCardsProps) => {
             <Card.Header>
               <div className="flex md:basis-2/4 justify-center py-4 p-2 md:p-4 rounded-lg bg-white">
                 <div className="flex max-h-32 justify-center">
-                  <img
-                    style={{ maxHeight: "100%" }}
+                  <GImage
+                  wClass="w-32"
+                  hClass="h-32"
                     src={winner.award.urlImage}
                     alt={winner.award.title}
                   />
@@ -41,10 +43,11 @@ const WinnersCards = ({ winners, t }: WinnersCardsProps) => {
                 </div>
                 <div className="flex flex-col gap-2">
                   <Text variant="white">{winner.ticket.slug}</Text>
-                  <Text variant="white">{formatDate(winner.award.drawDate)}</Text>
+                  <Text variant="white">
+                    {formatDate(winner.award.drawDate)}
+                  </Text>
                 </div>
               </div>
-              
             </Card.Body>
           </Card>
         );

@@ -6,7 +6,7 @@ export default async function Notifications({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
 
   return (
-    <GPage t={t}>
+    <GPage id="notifications" t={t}>
       <div></div>
     </GPage>
   );

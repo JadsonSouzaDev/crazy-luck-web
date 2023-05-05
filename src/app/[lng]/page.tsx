@@ -12,7 +12,7 @@ import { Winner } from "@/types/model/Winner";
 import DonationCard from "@/components/Card/DonationCard";
 
 export default async function Login({ params: { lng } }: PageProps) {
-  const { t } = await useTranslation(lng);
+  const { t, i18n } = await useTranslation(lng, 'translation');
 
   const awards: Award[] = [
     {
@@ -110,14 +110,14 @@ export default async function Login({ params: { lng } }: PageProps) {
 
       <GSection id="campaing-ending" className="bg-gray-100 mb-14">
         <Heading as="h2" className="pt-5 md:text-left" align="center">
-          {t("campaing-ending-soon")}
+          {i18n.t("campaing-ending-soon")}
         </Heading>
         <SoonAwardCards awards={awards} t={t} />
       </GSection>
 
       <GSection id="on-going-campaign" className="bg-gray-100 mb-14">
         <Heading as="h2" className="pt-5" align="center">
-          {t("on-going-deals")}
+          {i18n.t("on-going-deals")}
         </Heading>
         <OnGoingAwardCards awards={awards} t={t} />
       </GSection>
@@ -127,7 +127,7 @@ export default async function Login({ params: { lng } }: PageProps) {
         className="bg-gradient-to-r from-lime-500 to-lime-600 mb-14"
       >
         <Heading as="h2" variant="white" className="pt-5" align="center">
-          {t("recent-winners")}
+          {i18n.t("recent-winners")}
         </Heading>
 
         <WinnersCards winners={winners} t={t} />
@@ -135,7 +135,7 @@ export default async function Login({ params: { lng } }: PageProps) {
 
       <GSection id="donation" className="bg-gray-100 lg:mb-14">
         <Heading as="h2" className="pt-5" align="center">
-          {t("donation-title")}
+          {i18n.t("donation-title")}
         </Heading>
         <DonationCard t={t} />
       </GSection>

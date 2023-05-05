@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { formatDate } from "@/utils/date";
 import { TranslateProps } from "@/types/props/TranslateProps";
+import GImage from "@/components/GImage";
 
 type OnGoingAwardCardsProps = {
   awards: Award[];
@@ -24,10 +25,11 @@ const OnGoingAwardCards = ({ awards, t }: OnGoingAwardCardsProps) => {
           <Card key={key} className="w-80 md:w-auto md:gap-1">
             <Card.Body>
               <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-3 md:gap-10">
-                <div className="flex max-h-40 justify-center">
-                  <img
+                <div className="flex max-h-40 justify-center items-center">
+                  <GImage
+                    hClass="h-40"
+                    wClass="w-40"
                     className="my-auto"
-                    style={{ maxHeight: "100%" }}
                     src={award.urlImage}
                     alt={award.title}
                   />

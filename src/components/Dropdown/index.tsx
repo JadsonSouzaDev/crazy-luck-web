@@ -33,7 +33,7 @@ export default function DropdownComponent({
         type="button"
         onClick={() => setOpened(!opened)}
       >
-        <Text>{selectedValue.label || options[0].label || ""} </Text>
+        <Text>{selectedValue?.label || options[0]?.label || ""} </Text>
         <svg
           className={`w-4 h-4 ml-2 ${opened ? "rotate-180" : ""}`}
           aria-hidden="true"
