@@ -8,10 +8,7 @@ const Login = async ({ params: { lng } }: PageProps) => {
   const { t } = await useTranslation(lng);
 
   return (
-    <GPage id="login" hideFooter hideNavbar t={t}>
-      {/* <div>
-        <GoogleButton />
-      </div> */}
+    <GPage id="login" hideFooter hideNavbar t={t} uri="/login">
       <GSection id="login" className="md:py-0">
         <LoginForm t={t} />
       </GSection>

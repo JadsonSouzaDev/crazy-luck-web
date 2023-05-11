@@ -6,7 +6,7 @@ export default async function Cart({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
 
   return (
-    <GPage id="cart" t={t}>
+    <GPage id="cart" t={t} uri="/cart">
       <div></div>
     </GPage>
   );

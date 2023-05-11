@@ -103,7 +103,7 @@ export default async function Login({ params: { lng } }: PageProps) {
   ];
 
   return (
-    <GPage id="offers" t={t}>
+    <GPage id="offers" t={t} uri="/">
       <GSection id="carousel" className="mb-6 md:mb-14 lg:px-0">
         <AwardCarousel t={t} awards={awards} />
       </GSection>
