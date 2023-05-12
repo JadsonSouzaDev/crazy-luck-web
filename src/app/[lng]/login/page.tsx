@@ -1,5 +1,6 @@
 import { useTranslation } from "@/app/i18n";
 import LoginForm from "@/components/Form/LoginForm";
+import GAuthenticatedRedirect from "@/components/GAuthenticatedRedirect";
 import GPage from "@/components/GPage";
 import GSection from "@/components/GSection";
 import { PageProps } from "@/types/props/GenericalPageProps";
@@ -9,6 +10,7 @@ const Login = async ({ params: { lng } }: PageProps) => {
 
   return (
     <GPage id="login" hideFooter hideNavbar t={t} uri="/login">
+      <GAuthenticatedRedirect />
       <GSection id="login" className="md:py-0">
         <LoginForm t={t} />
       </GSection>
