@@ -6,7 +6,6 @@ import Button from "@/components/Button";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { formatCurrency } from "@/utils/currency";
 import { TranslateProps } from "@/types/props/TranslateProps";
-import Image from "next/image";
 import GImage from "@/components/GImage";
 
 type SoonAwardCardsProps = {
@@ -52,7 +51,7 @@ const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
               <div className="flex justify-center items-end gap-1">
                 <Text className="mb-1 -mr-2 text-gray-400">R$</Text>
                 <Text variant="primary" fontSize="2xl" fontWeight="bold">
-                  {formatCurrency(award.price)}
+                  {formatCurrency(award.prices[0].unitPrice)}
                 </Text>
               </div>
             </Card.Body>

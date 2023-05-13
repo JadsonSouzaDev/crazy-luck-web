@@ -27,7 +27,7 @@ const Button = ({
   const commonClass = "rounded";
   const paddingClass = { base: "py-2 px-4", lg: "py-3 px-6", xl: "py-4 px-8" };
   const types = {
-    normal: "bg-lime-500 hover:bg-lime-700 text-white",
+    normal: "bg-lime-500 hover:bg-lime-700 text-white border border-lime-500 hover:border-lime-700",
     disabled: "opacity-50 cursor-not-allowed",
     inverted:
       "bg-transparent hover:bg-lime-500 text-lime-500 py-2 px-4 border border-lime-500 hover:text-white rounded",

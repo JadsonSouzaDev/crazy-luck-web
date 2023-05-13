@@ -42,7 +42,7 @@ const OnGoingAwardCards = ({ awards, t }: OnGoingAwardCardsProps) => {
                   <div className="flex items-end gap-1 pt-3">
                     <Text className="mb-1 -mr-2 text-gray-400">R$</Text>
                     <Text variant="primary" fontSize="2xl" fontWeight="bold">
-                      {formatCurrency(award.price)}
+                      {formatCurrency(award.prices[0].unitPrice)}
                     </Text>
                   </div>
 

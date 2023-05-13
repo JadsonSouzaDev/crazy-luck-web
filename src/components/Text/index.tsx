@@ -6,7 +6,7 @@ type TextProps = {
   children: ReactNode;
   isParagraph?: boolean;
   className?: string;
-  fontSize?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl";
+  fontSize?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl";
   fontWeight?:
     | "thin"
     | "extralight"
@@ -20,6 +20,7 @@ type TextProps = {
 
 const Text = (props: TextProps) => {
   const sizes = {
+    "3xl": "text-2xl md:text-3xl lg:text-4xl",
     "2xl": "text-xl md:text-2xl lg:text-3xl",
     xl: "text-lg md:text-xl lg:text-2xl",
     lg: "text-sm md:text-lg lg:text-xl",

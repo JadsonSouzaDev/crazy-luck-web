@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import { randomIntFromInterval } from "@/utils/random";
 import { TranslateProps } from "@/types/props/TranslateProps";
 import GImage from "@/components/GImage";
+import Anchor from "@/components/Anchor";
 
 type AwardCarouselItemProps = {
   award: Award;
@@ -25,12 +26,18 @@ const AwardCarouselItem = ({ t, award }: AwardCarouselItemProps) => {
         <Text isParagraph fontSize="lg" variant="white" fontWeight="light">
           {t(`subtitle-award-carousel-item${subtitleNumber}`)}
         </Text>
-
-        <Button outlined>{t("buy-now")}</Button>
+        <Anchor href={`/awards/${award.slug}`}>
+          <Button outlined>{t("buy-now")}</Button>
+        </Anchor>
       </div>
       <div className="flex md:basis-2/4 justify-center pt-2 p-5 md:p-8">
         <div className="flex max-h-56 md:max-h-96 justify-center">
-          <GImage wClass="w-56 md:w-96" hClass="h-56 md:h-96" src={award.urlImage} alt={award.title} />
+          <GImage
+            wClass="w-56 md:w-96"
+            hClass="h-56 md:h-96"
+            src={award.urlImage}
+            alt={award.title}
+          />
         </div>
       </div>
     </div>

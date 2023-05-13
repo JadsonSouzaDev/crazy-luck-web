@@ -29,5 +29,11 @@
   "privacy-policy": "Privacy Policy",
   "logout": "Logout",
   "signin-title": "Sign in to unlock the best of {{app}}",
-  "signin-social": "Continue with {{provider}}"
+  "signin-social": "Continue with {{provider}}",
+  "tickets-left": "{{tickets}} of tickets solded",
+  "by-ticket": "/ ticket",
+  "ticket": "ticket",
+  "add-cart": "Add to cart",
+  "choose-package": "Choose your package",
+  "choose-quantity": "Choose the quantity"
 }

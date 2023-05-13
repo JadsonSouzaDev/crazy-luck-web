@@ -24,13 +24,13 @@ const GPage = ({
 }: GPageProps) => {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center max-w-6xl mx-auto ${
+      className={`flex min-h-screen flex-col lg:px-8 xl:px-0 items-center max-w-6xl mx-auto ${
         !hideNavbar && !hideFooter ? "justify-between" : ""
       }`}
     >
       {beAuthenticated && <GAuthRedirect uri={uri} />}
       {!hideNavbar && <Navbar t={t} />}
-      <section id={id}>{children}</section>
+      <section id={id} className="w-full">{children}</section>
       {!hideFooter && <Footer t={t} />}
     </main>
   );

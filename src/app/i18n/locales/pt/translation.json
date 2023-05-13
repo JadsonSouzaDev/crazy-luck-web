@@ -29,5 +29,11 @@
   "privacy-policy": "Políticas de privacidade",
   "logout": "Sair",
   "signin-title": "Entre para liberar o melhor do {{app}}",
-  "signin-social": "Entre com o {{provider}}"
+  "signin-social": "Entre com o {{provider}}",
+  "tickets-left": "{{tickets}} dos bilhetes vendidos",
+  "by-ticket": "/ bilhete",
+  "ticket": "bilhete",
+  "add-cart": "Adicionar ao carrinho",
+  "choose-package": "Escolha seu pacote",
+  "choose-quantity": "Escolha a quantidade"
 }
