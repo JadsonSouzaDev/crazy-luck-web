@@ -16,6 +16,6 @@ export class Award {
   urlImage: string = "";
   prices: AwardPrices[] = [];
   soldNumbers: AwardSoldNumbers = new AwardSoldNumbers();
-  maxDrawDate: Date = new Date();
-  drawDate: Date = new Date();
+  maxDrawDate: string = new Date().toString();
+  drawDate: string = new Date().toString();
 }

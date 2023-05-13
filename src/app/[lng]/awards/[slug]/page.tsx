@@ -1,4 +1,5 @@
 import { useTranslation } from "@/app/i18n";
+import { getAward } from "@/clients/awards";
 import AwardForm from "@/components/Form/AwardForm";
 import GImage from "@/components/GImage";
 import GPage from "@/components/GPage";
@@ -15,25 +16,7 @@ type AwardProps = {
 export default async function AwardPage({ params: { lng, slug } }: AwardProps) {
   const { i18n } = await useTranslation(lng);
 
-  const award: Award = {
-    slug: "iphone-14-pro-max",
-    title: "iPhone 14 Pro Max",
-    description:
-      "Here at Flowbite we focus on markets where technology, innovation, and  capital can unlock long-term value and drive economic growth.",
-    shortDescription: "Buy now and make it yours!",
-    urlImage: "https://pngimg.com/uploads/iphone_14/iphone_14_PNG19.png",
-    prices: [
-      { quantity: 1, unitPrice: 0.95 },
-      { quantity: 5, unitPrice: 0.9 },
-      { quantity: 10, unitPrice: 0.85 },
-    ],
-    soldNumbers: {
-      solded: 2819,
-      total: 11365,
-    },
-    maxDrawDate: new Date(),
-    drawDate: new Date(),
-  };
+  const award: Award = await getAward(slug);
 
   const sold = Math.trunc(
     (award.soldNumbers.solded * 100) / award.soldNumbers.total

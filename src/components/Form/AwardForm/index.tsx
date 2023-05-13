@@ -49,7 +49,7 @@ const AwardForm = ({ soldedPercentage, award, labels }: AwardFormProps) => {
           <Text>{soldedPercentage}</Text>
           <div className="mt-1 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
             <div
-              className="animate-pulse bg-lime-500 h-2.5 rounded-full"
+              className="bg-lime-500 h-2.5 rounded-full"
               style={{ width: `${sold < 100 ? sold : 100}%` }}
             ></div>
           </div>
