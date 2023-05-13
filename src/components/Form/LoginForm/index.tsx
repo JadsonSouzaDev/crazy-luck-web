@@ -2,6 +2,7 @@ import GoogleButton from "@/components/Button/GoogleButton";
 import Card from "@/components/Card";
 import Heading from "@/components/Heading";
 import { TranslateProps } from "@/types/props/TranslateProps";
+import Image from "next/image";
 
 const LoginForm = ({ t }: TranslateProps) => {
   return (
@@ -16,10 +17,20 @@ const LoginForm = ({ t }: TranslateProps) => {
           <div className="flex flex-col py-14 gap-6">
             <GoogleButton>
               <div className="flex justify-between items-center">
-                <img
+                {/* <img
                   src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
                   className="w-5"
                   alt="google logo"
+                />
+                
+                */}
+
+                <Image
+                  width={20}
+                  height={20}
+                  
+                  src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
+                  alt="donate"
                 />
                 {t("signin-social", { provider: "Google" })}
                 <div className="w-5"></div>
