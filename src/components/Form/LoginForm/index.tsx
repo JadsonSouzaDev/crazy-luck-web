@@ -1,13 +1,27 @@
-import GoogleButton from "@/components/Button/GoogleButton";
+import Anchor from "@/components/Anchor";
+import LoginButton from "@/components/Button/GoogleButton";
 import Card from "@/components/Card";
 import Heading from "@/components/Heading";
 import { TranslateProps } from "@/types/props/TranslateProps";
+import { Bungee } from "next/font/google";
 import Image from "next/image";
+
+const bungee = Bungee({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const LoginForm = ({ t }: TranslateProps) => {
   return (
-    <div className="flex bg-lime-200 w-screen h-screen justify-center items-center">
-      <Card className="px-14 py-10 max-w-lg">
+    <div className="flex flex-col bg-lime-200 w-screen h-screen justify-center items-center gap-5">
+      <Anchor href="">
+        <h1
+          className={`${bungee.className} text-lime-500 text-4xl font-extrabold lg:text-5xl`}
+        >
+          {t("app-name")}
+        </h1>
+      </Anchor>
+      <Card className="px-6 md:px-14 py-10 max-w-lg">
         <Card.Header>
           <Heading as="h2">
             {t("signin-title", { app: t("app-name") })}.
@@ -15,28 +29,19 @@ const LoginForm = ({ t }: TranslateProps) => {
         </Card.Header>
         <Card.Body>
           <div className="flex flex-col py-14 gap-6">
-            <GoogleButton>
+            <LoginButton>
               <div className="flex justify-between items-center">
-                {/* <img
-                  src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
-                  className="w-5"
-                  alt="google logo"
-                />
-                
-                */}
-
                 <Image
                   width={20}
                   height={20}
-                  
                   src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
                   alt="donate"
                 />
                 {t("signin-social", { provider: "Google" })}
                 <div className="w-5"></div>
               </div>
-            </GoogleButton>
-            <GoogleButton>
+            </LoginButton>
+            <LoginButton>
               <div className="flex justify-between items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +61,7 @@ const LoginForm = ({ t }: TranslateProps) => {
                 {t("signin-social", { provider: "e-mail" })}
                 <div className="w-5"></div>
               </div>
-            </GoogleButton>
+            </LoginButton>
           </div>
         </Card.Body>
 

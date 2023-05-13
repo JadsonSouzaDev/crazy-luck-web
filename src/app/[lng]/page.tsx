@@ -20,7 +20,7 @@ export default async function Login({ params: { lng } }: PageProps) {
 
   return (
     <GPage id="offers" t={t} uri="/">
-      <GSection id="carousel" className="mb-6 md:mb-14 lg:px-0">
+      <GSection id="carousel" className="p-3 mb-6 md:mb-14 lg:px-0">
         <AwardCarousel t={t} awards={awards} />
       </GSection>
 
@@ -49,7 +49,7 @@ export default async function Login({ params: { lng } }: PageProps) {
         <WinnersCards winners={winners} t={t} />
       </GSection>
 
-      <GSection id="donation" className="bg-gray-100 lg:mb-14">
+      <GSection id="donation" className="p-3 lg:px-0 bg-gray-100 lg:mb-14">
         <Heading as="h2" className="pt-5" align="center">
           {i18n.t("donation-title")}
         </Heading>

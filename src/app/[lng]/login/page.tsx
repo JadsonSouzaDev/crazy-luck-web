@@ -11,7 +11,7 @@ const Login = async ({ params: { lng } }: PageProps) => {
   return (
     <GPage id="login" hideFooter hideNavbar t={t} uri="/login" isFull>
       <GAuthenticatedRedirect />
-      <GSection id="login">
+      <GSection id="login-form">
         <LoginForm t={t} />
       </GSection>
     </GPage>

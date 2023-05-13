@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import Button from "..";
 import { signIn, useSession } from "next-auth/react";
 
-const GoogleButton = ({ children }: { children: React.ReactNode }) => {
+const LoginButton = ({ children }: { children: React.ReactNode }) => {
   const { data: session } = useSession();
   const searchParams = useSearchParams();
   const uri = searchParams.get("callbackUrl") ?? '';
@@ -23,4 +23,4 @@ const GoogleButton = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default GoogleButton;
+export default LoginButton;
