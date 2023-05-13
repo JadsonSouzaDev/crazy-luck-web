@@ -1,7 +1,9 @@
 import { Winner } from "@/types/model/Winner";
 
+const API_URL = `${process.env.BASE_URL}/api/public/winners`;
+
 export const getWinners = async (): Promise<Winner[]> => {
-  const res = await fetch("http://localhost:3000/api/public/winners");
+  const res = await fetch(API_URL);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

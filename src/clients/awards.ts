@@ -1,7 +1,9 @@
 import { Award } from "@/types/model/Award";
 
+const API_URL = `${process.env.BASE_URL}/api/public/awards`;
+
 export const getAwards = async (): Promise<Award[]> => {
-  const res = await fetch("http://localhost:3000/api/public/awards");
+  const res = await fetch(API_URL);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -10,7 +12,7 @@ export const getAwards = async (): Promise<Award[]> => {
 };
 
 export const getAward = async (slug: string): Promise<Award> => {
-  const res = await fetch("http://localhost:3000/api/public/awards/" + slug);
+  const res = await fetch(`${API_URL}/${slug}`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
