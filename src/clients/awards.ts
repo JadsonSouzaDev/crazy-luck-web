@@ -1,6 +1,6 @@
 import { Award } from "@/types/model/Award";
 
-const API_URL = `${process.env.BASE_URL}/api/public/awards`;
+const API_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/public/awards`;
 
 export const getAwards = async (): Promise<Award[]> => {
   const res = await fetch(API_URL);

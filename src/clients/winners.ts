@@ -1,6 +1,6 @@
 import { Winner } from "@/types/model/Winner";
 
-const API_URL = `${process.env.BASE_URL}/api/public/winners`;
+const API_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/public/winners`;
 
 export const getWinners = async (): Promise<Winner[]> => {
   const res = await fetch(API_URL);
