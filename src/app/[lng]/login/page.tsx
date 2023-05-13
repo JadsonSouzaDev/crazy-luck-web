@@ -9,9 +9,9 @@ const Login = async ({ params: { lng } }: PageProps) => {
   const { t } = await useTranslation(lng);
 
   return (
-    <GPage id="login" hideFooter hideNavbar t={t} uri="/login">
+    <GPage id="login" hideFooter hideNavbar t={t} uri="/login" isFull>
       <GAuthenticatedRedirect />
-      <GSection id="login" className="md:py-0">
+      <GSection id="login">
         <LoginForm t={t} />
       </GSection>
     </GPage>
