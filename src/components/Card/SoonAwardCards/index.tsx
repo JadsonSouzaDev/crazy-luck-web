@@ -7,6 +7,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { formatCurrency } from "@/utils/currency";
 import { TranslateProps } from "@/types/props/TranslateProps";
 import GImage from "@/components/GImage";
+import Anchor from "@/components/Anchor";
 
 type SoonAwardCardsProps = {
   awards: Award[];
@@ -57,11 +58,13 @@ const SoonAwardCards = ({ awards, t }: SoonAwardCardsProps) => {
             </Card.Body>
             <Card.Footer>
               <div className="flex justify-center my-1 md:my-3">
-                <Button>
-                  <div className="flex justify-center items-center gap-2">
-                    <ShoppingCartIcon className="h-6 w-6 " /> {t("buy-now")}
-                  </div>
-                </Button>
+                <Anchor href={`/awards/${award.slug}`}>
+                  <Button>
+                    <div className="flex justify-center items-center gap-2">
+                      <ShoppingCartIcon className="h-6 w-6 " /> {t("buy-now")}
+                    </div>
+                  </Button>
+                </Anchor>
               </div>
             </Card.Footer>
           </Card>

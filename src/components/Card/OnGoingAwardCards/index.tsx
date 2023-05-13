@@ -12,6 +12,7 @@ import {
 import { formatDate } from "@/utils/date";
 import { TranslateProps } from "@/types/props/TranslateProps";
 import GImage from "@/components/GImage";
+import Anchor from "@/components/Anchor";
 
 type OnGoingAwardCardsProps = {
   awards: Award[];
@@ -47,11 +48,14 @@ const OnGoingAwardCards = ({ awards, t }: OnGoingAwardCardsProps) => {
                   </div>
 
                   <div className="flex justify-center pt-2 md:pt-4">
-                    <Button>
-                      <div className="flex justify-center items-center gap-2">
-                        <ShoppingCartIcon className="h-6 w-6 " /> {t("buy-now")}
-                      </div>
-                    </Button>
+                    <Anchor href={`/awards/${award.slug}`}>
+                      <Button>
+                        <div className="flex justify-center items-center gap-2">
+                          <ShoppingCartIcon className="h-6 w-6 " />{" "}
+                          {t("buy-now")}
+                        </div>
+                      </Button>
+                    </Anchor>
                   </div>
                 </div>
 

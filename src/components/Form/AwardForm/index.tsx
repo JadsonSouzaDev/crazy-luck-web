@@ -42,22 +42,22 @@ const AwardForm = ({ soldedPercentage, award, labels }: AwardFormProps) => {
   );
 
   return (
-    <div className="flex py-8 pl-12">
-      <div className="flex flex-col gap-4 md:gap-10">
+    <div className="flex px-2 py-8 md:pl-12 justify-center">
+      <div className="flex flex-col gap-8 md:gap-10">
         <div className="flex flex-col">
           <Heading as="h2">{award.title}</Heading>
           <Text>{soldedPercentage}</Text>
-          <div className="mt-1 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-300">
+          <div className="mt-1 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
             <div
-              className="bg-lime-500 h-2.5 rounded-full"
-              style={{ width: `${sold}%` }}
+              className="animate-pulse bg-lime-500 h-2.5 rounded-full"
+              style={{ width: `${sold < 100 ? sold : 100}%` }}
             ></div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col items-center md:items-start gap-2">
           <Text>{labels.choosePackage}</Text>
-          <div className="flex gap-3">
+          <div className="flex gap-2 md:gap-3">
             {award.prices.map((price, key) => {
               const selected = price.quantity === selectedPrice.quantity;
               return (
@@ -65,7 +65,7 @@ const AwardForm = ({ soldedPercentage, award, labels }: AwardFormProps) => {
                   <Button
                     onClick={() => setSelectedPrice(price)}
                     inverted={!selected}
-                    className="w-32"
+                    className="lg:w-36 w-24 px-1"
                   >
                     {price.quantity} {labels.ticket}
                     {price.quantity > 1 ? "s" : ""}
@@ -79,12 +79,12 @@ const AwardForm = ({ soldedPercentage, award, labels }: AwardFormProps) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col items-center md:items-start gap-2">
           <Text>{labels.chooseQuantity}</Text>
           <Counter value={quantity} onChange={setQuantity} />
         </div>
 
-        <div className="flex border border-lime-500 rounded-md p-3 justify-between items-center gap-6">
+        <div className="flex border border-lime-500 rounded-md p-3 justify-between">
           <div className="flex justify-center items-end gap-1">
             <Text fontSize="base" className="mb-1 -mr-2 text-gray-400">
               R$
@@ -92,7 +92,7 @@ const AwardForm = ({ soldedPercentage, award, labels }: AwardFormProps) => {
             <Text variant="primary" fontSize="3xl" fontWeight="bold">
               {formatCurrency(totalPrice)}
             </Text>
-            <Text>
+            <Text className="hidden lg:block mb-1">
               / {totalTickets} {labels.ticket}
               {totalTickets > 1 ? "s" : ""}
             </Text>
@@ -100,7 +100,7 @@ const AwardForm = ({ soldedPercentage, award, labels }: AwardFormProps) => {
 
           <Button>
             <div className="flex gap-2">
-              <ShoppingCartIcon className="h-5 w-5"></ShoppingCartIcon>{" "}
+              <ShoppingCartIcon className="h-5 w-5 block md:hidden lg:block"></ShoppingCartIcon>{" "}
               {labels.addCart}
             </div>
           </Button>
