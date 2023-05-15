@@ -6,7 +6,6 @@ import GPage from "@/components/GPage";
 import GSection from "@/components/GSection";
 import Heading from "@/components/Heading";
 import Text from "@/components/Text";
-import awards from "@/mocks/awards";
 import { Award } from "@/types/model/Award";
 import { PageProps } from "@/types/props/GenericalPageProps";
 
@@ -17,8 +16,7 @@ type AwardProps = {
 export default async function AwardPage({ params: { lng, slug } }: AwardProps) {
   const { i18n } = await useTranslation(lng);
 
-  // const award: Award = await getAward(slug);
-  const award: Award = awards[0];
+  const award: Award = await getAward(slug);
 
   const sold = Math.trunc(
     (award.soldNumbers.solded * 100) / award.soldNumbers.total

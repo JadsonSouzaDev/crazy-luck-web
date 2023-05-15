@@ -12,16 +12,11 @@ import { Winner } from "@/types/model/Winner";
 import DonationCard from "@/components/Card/DonationCard";
 import { getAwards } from "../../clients/awards";
 import { getWinners } from "../../clients/winners";
-import {default as mockAwards} from "@/mocks/awards";
-import {default as mockWinners} from "@/mocks/winners";
 
 export default async function Home({ params: { lng } }: PageProps) {
   const { t, i18n } = await useTranslation(lng, "translation");
-  // const awards: Award[] = await getAwards();
-  // const winners: Winner[] = await getWinners();
-
-  const awards: Award[] = mockAwards;
-  const winners: Winner[] = mockWinners;
+  const awards: Award[] = await getAwards();
+  const winners: Winner[] = await getWinners();
 
   return (
     <GPage id="offers" t={t} uri="/">
