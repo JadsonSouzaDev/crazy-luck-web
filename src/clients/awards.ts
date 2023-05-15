@@ -5,7 +5,7 @@ const API_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/public/awards`;
 export const getAwards = async (): Promise<Award[]> => {
   const res = await fetch(API_URL);
   if (!res.ok) {
-    throw new Error(`Failed to fetch data, ${API_URL}`);
+    throw new Error(`Failed to fetch data, ${API_URL}, ${res.status}`);
   }
 
   return res.json() as unknown as Award[];
