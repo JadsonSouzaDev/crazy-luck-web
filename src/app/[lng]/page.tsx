@@ -13,7 +13,7 @@ import DonationCard from "@/components/Card/DonationCard";
 import { getAwards } from "../../clients/awards";
 import { getWinners } from "../../clients/winners";
 
-export default async function Login({ params: { lng } }: PageProps) {
+export default async function Home({ params: { lng } }: PageProps) {
   const { t, i18n } = await useTranslation(lng, "translation");
   const awards: Award[] = await getAwards();
   const winners: Winner[] = await getWinners();
